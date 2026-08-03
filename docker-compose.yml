@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  react-app:
+    image: neenumurali33/docker-reactjs:latest
+    container_name: react-app
+    restart: unless-stopped
+    ports:
+      - "80:80"
