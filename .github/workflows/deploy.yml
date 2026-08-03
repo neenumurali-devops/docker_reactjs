@@ -84,8 +84,12 @@ jobs:
             cd /home/ec2-user/docker-reactjs
 
             docker compose pull
-            docker compose up -d --remove-orphans
 
+            docker compose down || true
+
+            docker rm -f react-app || true
+
+            docker compose up -d --remove-orphans
             docker image prune -f
 
             echo "Deployment completed successfully."
